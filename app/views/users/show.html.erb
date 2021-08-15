@@ -1,6 +1,6 @@
 <div class="contents row">
   <p><%= @nickname %>様の投稿一覧</p>
   <% @contributions.each do |contribution| %>
-    <p><%= contribution.text %></p>
+    <%= render partial: "contributions/contribution", locals: { contribution: contribution }%>
   <% end %>
 </div>
