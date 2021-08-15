@@ -1,0 +1,10 @@
+<div class="contents row">
+  <li>
+    <%= link_to '編集', edit_contribution_path(@contribution.id), method: :get %>
+    <%= link_to '削除', contribution_path(@contribution.id), method: :delete %>
+  </li>
+  <p><%= @contribution.title%></p>
+  <span class="text">
+    <%= @contribution.text %>
+  </span>
+</div>
