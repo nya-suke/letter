@@ -11,6 +11,11 @@ class ContributionsController < ApplicationController
     Contribution.create(contribution_params)
   end
 
+  def destroy
+    contribution = Contribution.find(params[:id])
+    contribution.destroy
+  end
+
   private
   def contribution_params
     params.require(:contribution).permit(:title, :text)
