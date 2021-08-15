@@ -7,4 +7,9 @@
   <span class="text">
     <%= @contribution.text %>
   </span>
+  <span class="name">
+    <a href="/users/<%= @contribution.user.id %>">
+      <span>投稿者</span><%= @contribution.user.nickname %>
+    </a>
+  </span>
 </div>

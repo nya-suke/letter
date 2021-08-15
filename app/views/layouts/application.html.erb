@@ -15,8 +15,9 @@
         <h1 class="grid-6"><a href="/">Letter</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid_6">
+            <%= link_to "マイページ", "/users/#{current_user.id}" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <%= link_to "投稿する", contributions_path, class: "post" %>
+            <%= link_to "投稿する", new_contribution_path %>
           </div>
         <% else %>
           <div class="grid_6">

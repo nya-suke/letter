@@ -8,6 +8,9 @@
   <p><%= contribution.title%></p>
   <span class="text">
     <%= contribution.text %>
+      <a href="/users/<%= contribution.user.id %>">
+        <span>投稿なさったお客様</span><%= contribution.user.nickname %>
+      </a>
   </span>
   <% end %>
 </div>
