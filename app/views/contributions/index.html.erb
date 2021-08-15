@@ -1,6 +1,7 @@
 <div class="contents row">
  <% @contributions.each do |contribution| %>
   <li>
+    <%= link_to '詳細', contribution_path(contribution.id), method: :get %>
     <%= link_to '編集', edit_contribution_path(contribution.id), method: :get %>
     <%= link_to '削除', contribution_path(contribution.id), method: :delete %>
   </li>
