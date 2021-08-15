@@ -16,6 +16,15 @@ class ContributionsController < ApplicationController
     contribution.destroy
   end
 
+  def edit
+    @contribution = Contribution.find(params[:id])
+  end
+
+  def update
+    contribution = Contribution.find(params[:id])
+    contribution.update(contribution_params)
+  end
+
   private
   def contribution_params
     params.require(:contribution).permit(:title, :text)
