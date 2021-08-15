@@ -1,0 +1,8 @@
+<div class="contents row">
+ <% @contributions.each do |contribution| %>
+  <p><%= contribution.title%></p>
+  <span class="text">
+    <%= contribution.text %>
+  </span>
+  <% end %>
+</div>
