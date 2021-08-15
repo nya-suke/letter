@@ -1,5 +1,8 @@
 <div class="contents row">
  <% @contributions.each do |contribution| %>
+  <li>
+    <%= link_to '削除', contribution_path(contribution.id), method: :delete %>
+  </li>
   <p><%= contribution.title%></p>
   <span class="text">
     <%= contribution.text %>
