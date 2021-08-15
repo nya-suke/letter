@@ -3,7 +3,7 @@ class ContributionsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @contributions = Contribution.all
+    @contributions = Contribution.includes(:user)
   end
 
   def new
@@ -32,7 +32,7 @@ class ContributionsController < ApplicationController
 
   private
   def contribution_params
-    params.require(:contribution).permit(:title, :text)
+    params.require(:contribution).permit(:title, :text).merge(user_id: current_user.id)
   end
 
   def set_contribution
