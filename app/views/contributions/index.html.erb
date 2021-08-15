@@ -1,18 +1,5 @@
 <div class="contents row">
  <% @contributions.each do |contribution| %>
-  <li>
-    <%= link_to '詳細', contribution_path(contribution.id), method: :get %>
-    <% if user_signed_in? && current_user.id == contribution.user_id %>
-      <%= link_to '編集', edit_contribution_path(contribution.id), method: :get %>
-      <%= link_to '削除', contribution_path(contribution.id), method: :delete %>
-    <% end %>
-  </li>
-  <p><%= contribution.title%></p>
-  <span class="text">
-    <%= contribution.text %>
-      <a href="/users/<%= contribution.user.id %>">
-        <span>投稿なさったお客様</span><%= contribution.user.nickname %>
-      </a>
-  </span>
+    <%= render partial: "contribution", locals: { contribution: contribution }%>
   <% end %>
 </div>
