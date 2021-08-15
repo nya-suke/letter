@@ -3,7 +3,7 @@ class ContributionsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @contributions = Contribution.includes(:user)
+    @contributions = Contribution.includes(:user).order("created_at DESC")
   end
 
   def new
