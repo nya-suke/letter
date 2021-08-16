@@ -1,6 +1,6 @@
 class ContributionsController < ApplicationController
   before_action :set_contribution, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @contributions = Contribution.includes(:user).order("created_at DESC")
@@ -30,6 +30,10 @@ class ContributionsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @contribution.comments.includes(:user)
+  end
+
+  def search
+    @contributions = Contribution.search(params[:keyword])
   end
 
   private
