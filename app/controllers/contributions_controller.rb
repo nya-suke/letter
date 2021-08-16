@@ -28,6 +28,8 @@ class ContributionsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @contribution.comments.includes(:user)
   end
 
   private
