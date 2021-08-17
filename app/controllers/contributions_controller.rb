@@ -11,7 +11,10 @@ class ContributionsController < ApplicationController
   end
 
   def create
-    Contribution.create(contribution_params)
+    @contribution = Contribution.create(contribution_params)
+    unless @contribution.save
+      render "contributions/new"
+    end
   end
 
   def destroy
