@@ -1,0 +1,27 @@
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
+    <div class="search-form">
+      <%= form_with(url: search_contributions_path, local: true, method: :get, class: "search_container") do |form| %>
+      <%= form.text_field :keyword, placeholder: "キーワードで検索", class: "input-box" %>
+      <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+    </div>
+  </div>
+    <div class="nav">
+      <ul class='lists-left'>
+        <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+        <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+      </ul>
+      <ul class='lists-right'>
+        <% if user_signed_in? %>
+            <li><%= link_to "マイページ", "/users/#{current_user.id}", class: "user-nickname" %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></li>
+            <li><%= link_to "投稿する", new_contribution_path, class: "post" %></li>
+        <% else %>
+            <li><%= link_to "ログイン", new_user_session_path, class: "login" %></li>
+            <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up"%></li>
+        <% end %>
+      </ul>
+    </div>
+</header>
