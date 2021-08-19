@@ -1,3 +1,4 @@
+<%= render "shared/header" %>
 <div class="contents row">
   <% if user_signed_in? && current_user.id == @contribution.user_id %>
     <li>

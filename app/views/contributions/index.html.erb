@@ -1,4 +1,15 @@
 <%= render "shared/header" %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      あなたの意見を記事にしよう
+    </h2>
+    <p class='service-explain'>
+      Letterは新聞をイメージした長文投稿アプリです
+    </p>
+    <p class='service-explain'>
+      一つの投稿で人生が変わる
+    </p>
+  </div>
 <div class="contents row">
  <% @contributions.each do |contribution| %>
     <%= render partial: "contribution", locals: { contribution: contribution }%>
