@@ -1,22 +1,30 @@
-  <div class="more">
-    <ul class = "more_list">
-        <li>
-          <%= link_to '詳細', contribution_path(contribution.id), method: :get %>
-        </li>
+<div class="form">
+  <div class="top-bar">
+      <h2><%= contribution.title%></h2>
+      <ul class = "more-list">
+        <%= link_to(contribution_path(contribution.id), method: :get) do %>
+          <button class="link">詳細</button>
+        <% end %>
       <% if user_signed_in? && current_user.id == contribution.user_id %>
-        <li>
-          <%= link_to '編集', edit_contribution_path(contribution.id), method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', contribution_path(contribution.id), method: :delete %>
-        </li>
+        <%= link_to(edit_contribution_path(contribution.id), method: :get) do %>
+          <button class="link">編集</button>
+        <% end %>
+        <%= link_to(contribution_path(contribution.id), method: :delete) do %>
+          <button class="link">削除</button>
+        <% end %>
       <% end %>
-    </ul>
+      </ul>
   </div>
-  <p><%= contribution.title%></p>
-  <span class="text">
-    <%= contribution.text %>
-      <a href="/users/<%= contribution.user.id %>">
-        <span>投稿なさったお客様</span><%= contribution.user.nickname %>
+  <div class="main-bar">
+    <div class="text">
+      <%= contribution.text %>
+    </div>
+    <div class= "user">
+      <span class ="contributer">投稿者</span>
+      <a class = "name" href="/users/<%= contribution.user.id %>">
+        <%= contribution.user.nickname %>
       </a>
-  </span>
+    </div>
+  </div>
+</div>
+

@@ -56,3 +56,37 @@ body {
 }
 
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */
+.form{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.top-bar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.link{
+  display: inline;
+  font-size:20px;
+  color: green;
+}
+
+.text{
+  font-size: 20px;
+}
+
+.user{
+  text-align: right;
+}
+.contributer{
+  font-size: 18px;
+}
+
+.name{
+  font-size: 18px;
+}
