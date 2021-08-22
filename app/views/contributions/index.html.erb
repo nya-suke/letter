@@ -1,9 +1,17 @@
-<%= form_with(url: search_contributions_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
+<%= render "shared/header" %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      あなたの意見を記事にしよう
+    </h2>
+    <p class='service-explain'>
+      Letterは新聞をイメージした長文投稿アプリです
+    </p>
+    <p class='service-explain'>
+      まずは１つ投稿してみよう
+    </p>
+  </div>
 <div class="contents row">
- <% @contributions.each do |contribution| %>
+  <% @contributions.each do |contribution| %>
     <%= render partial: "contribution", locals: { contribution: contribution }%>
   <% end %>
 </div>

@@ -1,31 +1,46 @@
-<div class="contents row">
+<%= render "shared/header" %>
+<div class="form">
+  <div class="top-bar">
+    <h2><%= @contribution.title%></h2>
   <% if user_signed_in? && current_user.id == @contribution.user_id %>
-    <li>
-      <%= link_to '編集', edit_contribution_path(@contribution.id), method: :get %>
-      <%= link_to '削除', contribution_path(@contribution.id), method: :delete %>
-    </li>
+  <ul class = "more-list">
+      <% if user_signed_in? && current_user.id == @contribution.user_id %>
+        <%= link_to(edit_contribution_path(@contribution.id), method: :get) do %>
+          <button class="link">編集</button>
+        <% end %>
+        <%= link_to(contribution_path(@contribution.id), method: :delete) do %>
+          <button class="link">削除</button>
+        <% end %>
+      <% end %>
+  </ul>
   <% end %>
-  <p><%= @contribution.title%></p>
-  <span class="text">
-    <%= @contribution.text %>
-  </span>
-  <span class="name">
-    <a href="/users/<%= @contribution.user.id %>">
-      <span>投稿者</span><%= @contribution.user.nickname %>
-    </a>
-  </span>
+  </div>
+  <div class="main-bar">
+    <div class="text">
+      <%= @contribution.text %>
+    </div>
+    <div class= "user">
+      <span class ="contributer">投稿者</span>
+      <a class = "name" href="/users/<%= @contribution.user.id %>">
+        <%= @contribution.user.nickname %>
+      </a>
+    </div>
+  </div>
+</div>
 </div>
 <div class="container">
   <% if user_signed_in? %>
-    <%= form_with(model: [@contribution, @comment], local: true) do |form| %>
-      <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-      <%= form.submit "投稿する" %>
+    <div class="new-form">
+      <%= form_with(model: [@contribution, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "text"%>
+        <%= form.submit "投稿する",class: "submit" %>
     <% end %>
+    </div>
   <% else %>
     <strong><p>コメントできません</p></strong>
   <% end %>
       <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+      <h3>＜コメント一覧＞</h3>
       <% @comments.each do |comment| %>
         <p>
           <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
@@ -33,4 +48,3 @@
         </p>
       <% end %>
     </div>
-</div>

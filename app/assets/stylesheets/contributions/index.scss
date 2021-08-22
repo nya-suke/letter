@@ -1,0 +1,93 @@
+a {
+  text-decoration: none;
+}
+
+.main {
+  background: #f8f8f8;
+}
+img {
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+}
+
+body {
+  box-sizing: border-box;
+  margin:     0;
+}
+
+.title-contents {
+  width: 100vw;
+  background-image: image-url('shutterstock_766749757.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.service-title {
+  font-size: 8vh;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+
+.store-btn {
+  display: flex;
+  margin-top: 24px;
+}
+
+.apple-btn {
+  margin-right: 1vw;
+  height: 9vh;
+}
+
+.google-btn {
+  height: 9vh;
+}
+
+.form{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.top-bar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.link{
+  display: inline;
+  font-size:20px;
+  color: green;
+}
+
+.text{
+  font-size: 20px;
+}
+
+.user{
+  text-align: right;
+}
+.contributer{
+  font-size: 18px;
+}
+
+.name{
+  font-size: 18px;
+}
+
+

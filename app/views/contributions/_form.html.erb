@@ -1,6 +1,8 @@
+  <div class = "new-form">
     <%= form_with model: @contribution, local: true do |form| %>
       <%= render 'contributions/error_messages', model: form.object %>
-      <%= form.text_field :title, placeholder: "title" %>
-      <%= form.text_area :text, placeholder: "text" %>
-      <%= form.submit "投稿する" %>
+      <%= form.text_field :title, placeholder: "title",class: "title" %>
+      <%= form.text_area :text, placeholder: "text",class: "text" %>
+      <%= form.submit "投稿する",class: "submit" %>
     <% end %>
+  </div>

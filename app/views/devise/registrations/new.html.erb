@@ -2,31 +2,41 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ニックネーム</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", maxlength:"40" %>
   </div>
     
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">メールアドレス</label>
+      <span class="indispensable">必須</span>
+    </div>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">パスワード</label>
+      <span class="indispensable">必須</span>
+    </div>
     <%= f.password_field :password, autocomplete: "new-password" %>
+    <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">パスワード(確認)</label>
+      <span class="indispensable">必須</span>
+    </div>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class='register-btn'>
+    <%= f.submit "新規登録" ,class:"register-red-btn" %>
   </div>
 <% end %>
 
