@@ -81,5 +81,15 @@
 # 使用技術
   HTML /CSS
   Ruby 2.6.5
-  Ruby on rails   
+  Ruby on rails 
+
+# ローカルで動作させるまでに必要なコマンド
+  % git clone 
+  % cd letter
+  % bundle install
+  % yarn install
+  % rails db:create
+  % rails db:migrate
+  % rails s
+
   
