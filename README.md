@@ -73,7 +73,6 @@
     検索フォームでキーワードを入力すると、該当するキーワードが入っている記事を表示させることができる。
     [![Image from Gyazo](https://i.gyazo.com/509e741719aab4408b5739bdb6c7ada5.gif)](https://gyazo.com/509e741719aab4408b5739bdb6c7ada5)
 
-# 実装予定の機能
 
 # データベース設計
     er.dioに記載
