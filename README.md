@@ -84,7 +84,7 @@
   Ruby on rails 
 
 # ローカルで動作させるまでに必要なコマンド
-  % git clone 
+  % git clone https://github.com/nya-suke/letter
   % cd letter
   % bundle install
   % yarn install
