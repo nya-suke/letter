@@ -33,7 +33,7 @@
 # 実装した機能についての画像・GIFおよびその説明
   ## 投稿一覧表示
     投稿された記事が一覧で表示される。
-    [![Image from Gyazo](https://i.gyazo.com/a9406f0ec2a95bca791e292c2f19d7fb.gif)](https://gyazo.com/a9406f0ec2a95bca791e292c2f19d7fb)
+    https://gyazo.com/a9406f0ec2a95bca791e292c2f19d7fb
 
   ## 投稿機能
     ログインしているユーザーのみ投稿できる。投稿する際はタイトルと本文が必須で、本文は400文字以上の入力が必要。
