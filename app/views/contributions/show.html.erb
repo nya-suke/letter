@@ -31,7 +31,9 @@
 <div class="container">
   <% if user_signed_in? %>
     <div class="new-form">
-      <%= form_with(model: [@contribution, @comment], local: true) do |form| %>
+    <%= form_with(model: [@contribution, @comment], local: true) do |form| %>
+        <%= render 'contributions/error_messages', model: form.object %>
+        <h3>コメントは200字以上の入力が必要です</h3>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "text"%>
         <%= form.submit "投稿する",class: "submit" %>
     <% end %>
