@@ -10,6 +10,7 @@
       まずは１つ投稿してみよう
     </p>
   </div>
+  
 <div class="contents row">
   <% @contributions.each do |contribution| %>
     <%= render partial: "contribution", locals: { contribution: contribution }%>
